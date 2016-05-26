@@ -2,6 +2,7 @@
 
     namespace nox\components\http\userAgent;
 
+    use nox\components\http\userAgent\models\UserAgent;
     use yii\base\Component;
 
     /**
@@ -12,7 +13,7 @@
     class Parser extends Component
     {
         /**
-         * @var string[]
+         * @var UserAgent
          */
         public $parser;
 
@@ -23,16 +24,51 @@
         {
             parent::init();
 
-            $this->parser = parse_user_agent(\Yii::$app->request->userAgent);
+            $this->parser = $this->parseUserAgent();
         }
 
         /**
          * @param string $ua
          *
-         * @return string[]
+         * @return UserAgent
          */
         public function parse($ua)
         {
-            return parse_user_agent($ua);
+            return $this->parseUserAgent($ua);
+        }
+
+        /**
+         * @param string $ua
+         *
+         * @return UserAgent
+         */
+        protected function parseUserAgent($ua = '')
+        {
+            $ua = (string)$ua;
+
+            if (empty($ua)) {
+                $ua = \Yii::$app->request->userAgent;
+
+                if (empty($ua)) {
+                    return new UserAgent();
+                }
+            }
+
+            $parsedUserAgent = parse_user_agent($ua);
+            $userAgent       = new UserAgent();
+
+            $userAgent->ua = $ua;
+
+            if (is_array($parsedUserAgent) && isset($parsedUserAgent['platform'], $parsedUserAgent['browser'], $parsedUserAgent['version'])) {
+                $userAgent->platform = (string)$parsedUserAgent['platform'];
+                $userAgent->browser  = (string)$parsedUserAgent['browser'];
+                $userAgent->version  = (string)$parsedUserAgent['version'];
+
+                if (!empty($userAgent->platform) || !empty($userAgent->browser) || !empty($userAgent->version)) {
+                    $userAgent->successfullyParsed = true;
+                }
+            }
+
+            return $userAgent;
         }
     }

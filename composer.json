@@ -10,7 +10,7 @@
     "php"
   ],
   "license": "Apache-2.0",
-  "version": "1.0.2",
+  "version": "1.5.0",
   "authors": [
     {
       "name": "Jonatas Sas",
@@ -22,6 +22,7 @@
     "php": ">=5.4.0",
     "yiisoft/yii2": "2.*",
     "nox-it/yii2-nox": "1.*",
+    "nox-it/yii2-nox-mvc": "1.*",
     "donatj/phpuseragentparser": "0.5.*"
   },
   "autoload": {
