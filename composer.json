@@ -10,7 +10,7 @@
     "php"
   ],
   "license": "Apache-2.0",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "authors": [
     {
       "name": "Jonatas Sas",
@@ -26,7 +26,7 @@
   },
   "autoload": {
     "psr-4": {
-      "nox\\components\\userAgent\\": "components/userAgent"
+      "nox\\components\\http\\userAgent\\": "components/http/userAgent"
     }
   },
   "config": {
