@@ -6,11 +6,11 @@
     use yii\base\Component;
 
     /**
-     * Class Parser
+     * Class UserAgentParser
      *
      * @package nox\components\http
      */
-    class Parser extends Component
+    class UserAgentParser extends Component
     {
         /**
          * @var UserAgent
@@ -24,7 +24,7 @@
         {
             parent::init();
 
-            $this->parser = $this->parseUserAgent();
+            $this->parser = static::parseUserAgent();
         }
 
         /**
@@ -32,9 +32,9 @@
          *
          * @return UserAgent
          */
-        public function parse($ua)
+        public static function parse($ua)
         {
-            return $this->parseUserAgent($ua);
+            return static::parseUserAgent($ua);
         }
 
         /**
@@ -42,7 +42,7 @@
          *
          * @return UserAgent
          */
-        protected function parseUserAgent($ua = '')
+        protected static function parseUserAgent($ua = '')
         {
             $ua = (string)$ua;
 
