@@ -32,7 +32,7 @@
          *
          * @return UserAgent
          */
-        public static function parse($ua)
+        public static function parse($ua = '')
         {
             return static::parseUserAgent($ua);
         }
