@@ -1,48 +1,37 @@
 Yii PHP Framework Version 2 / NOX UserAgent Parser
 ==================================================
 
-## What It Is
+A simple streamlined PHP user-agent parser for Yii Framework 2.
 
-A simple streamlined PHP user-agent parser for Yii Framework 2, using "[donatj/PhpUserAgent](https://github.com/donatj/PhpUserAgent)".
+[![Latest Stable Version](https://poser.pugx.org/nox-it/yii2-nox-user-agent-parser/v/stable)](https://packagist.org/packages/nox-it/yii2-nox-user-agent-parser)
+[![Total Downloads](https://poser.pugx.org/nox-it/yii2-nox-user-agent-parser/downloads)](https://packagist.org/packages/nox-it/yii2-nox-user-agent-parser)
+[![Latest Unstable Version](https://poser.pugx.org/nox-it/yii2-nox-user-agent-parser/v/unstable)](https://packagist.org/packages/nox-it/yii2-nox-user-agent-parser)
+[![License](https://poser.pugx.org/nox-it/yii2-nox-user-agent-parser/license)](https://packagist.org/packages/nox-it/yii2-nox-user-agent-parser)
+[![Monthly Downloads](https://poser.pugx.org/nox-it/yii2-nox-user-agent-parser/d/monthly)](https://packagist.org/packages/nox-it/yii2-nox-user-agent-parser)
+[![Daily Downloads](https://poser.pugx.org/nox-it/yii2-nox-user-agent-parser/d/daily)](https://packagist.org/packages/nox-it/yii2-nox-user-agent-parser)
+[![composer.lock](https://poser.pugx.org/nox-it/yii2-nox-user-agent-parser/composerlock)](https://packagist.org/packages/nox-it/yii2-nox-user-agent-parser)
 
-Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+## Installation
 
+The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
-## Why Use This
+Either run
 
-You have your choice in user-agent parsers. This one detects **all modern browsers** in a very light, quick, understandable fashion.
-It is less than 200 lines of code, and consists of just three regular expressions!
-It can also correctly identify exotic versions of IE others fail on.
-
-It offers 100% unit test coverage, is installable via Composer, and is very easy to use.
-
-## What It Does Not Do
-
-### OS Versions
-
-User-agent strings **are not** a reliable source of OS Version!
-
-- Many agents simply don't send the information.
-- Others provide varying levels of accuracy.
-- Parsing Windows versions alone almost nearly doubles the size of the code.
-
-## Requirements
-
-  - PHP 5.4.0+
-
-## Installing
-
-PHP User Agent is available through Packagist via Composer.
-
-```json
-{
-	"require": {
-		"nox-it/yii2-nox-user-agent-parser": "*"
-	}
-}
+```bash
+php composer.phar require --prefer-dist nox-it/yii2-nox-user-agent-parser "*"
 ```
 
-## Sample Usage (Statically)
+or add
+
+```
+"nox-it/yii2-nox-user-agent-parser": "*"
+```
+
+to the require section of your `composer.json` file.
+
+## Usage
+
+### Statically
 
 ```php
 use nox\components\http\userAgent\Parser;
@@ -56,7 +45,7 @@ $userAgent->browser;            // [Detected Browser]
 $userAgent->version;            // [Detected Browser Version]
 ```
 
-## Sample Usage (as Object)
+### As Object
 
 ```php
 use nox\components\http\userAgent\Parser;
@@ -73,30 +62,30 @@ $userAgent->version;            // [Detected Browser Version]
 ## Currently Detected Platforms
 
 - Desktop
-	- Windows
-	- Linux
-	- Macintosh
-	- Chrome OS
+    - Windows
+    - Linux
+    - Macintosh
+    - Chrome OS
 - Mobile
-	- Android
-	- iPhone
-	- iPad / iPod Touch
-	- Windows Phone OS
-	- Kindle
-	- Kindle Fire
-	- BlackBerry
-	- Playbook
-	- Tizen
+    - Android
+    - iPhone
+    - iPad / iPod Touch
+    - Windows Phone OS
+    - Kindle
+    - Kindle Fire
+    - BlackBerry
+    - Playbook
+    - Tizen
 - Console
-	- Nintendo 3DS
-	- New Nintendo 3DS
-	- Nintendo Wii
-	- Nintendo WiiU
-	- PlayStation 3
-	- PlayStation 4
-	- PlayStation Vita
-	- Xbox 360
-	- Xbox One
+    - Nintendo 3DS
+    - New Nintendo 3DS
+    - Nintendo Wii
+    - Nintendo WiiU
+    - PlayStation 3
+    - PlayStation 4
+    - PlayStation Vita
+    - Xbox 360
+    - Xbox One
 
 ## Currently Detected Browsers
 
@@ -116,5 +105,9 @@ $userAgent->version;            // [Detected Browser Version]
 - Lynx
 - Wget
 - Curl
+
+## License
+
+**yii2-nox-user-agent-parser** is released under the BSD 3-Clause License. See the bundled `LICENSE.md` for details.
 
 ![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)
