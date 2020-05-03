@@ -2,7 +2,9 @@
 
     namespace nox\components\http\userAgent;
 
+    use donatj\UserAgent\UserAgentParser as BaseUserAgentParser;
     use nox\components\http\userAgent\models\UserAgent;
+    use Yii;
     use yii\base\Component;
 
     /**
@@ -15,7 +17,7 @@
         /**
          * @var UserAgent
          */
-        public $parser;
+        public ?UserAgent $parser = null;
 
         /**
          * @inheritdoc
@@ -47,22 +49,25 @@
             $ua = (string)$ua;
 
             if (empty($ua)) {
-                $ua = \Yii::$app->request->userAgent;
+                $ua = Yii::$app->request->userAgent;
 
                 if (empty($ua)) {
                     return new UserAgent();
                 }
             }
 
-            $parsedUserAgent = parse_user_agent($ua);
+            $parsedUserAgent = new BaseUserAgentParser();
+
+            $baseUserAgent   = $parsedUserAgent->parse($ua);
+
             $userAgent       = new UserAgent();
 
-            $userAgent->ua = $ua;
+            $userAgent->ua   = $ua;
 
-            if (is_array($parsedUserAgent) && isset($parsedUserAgent['platform'], $parsedUserAgent['browser'], $parsedUserAgent['version'])) {
-                $userAgent->platform = (string)$parsedUserAgent['platform'];
-                $userAgent->browser  = (string)$parsedUserAgent['browser'];
-                $userAgent->version  = (string)$parsedUserAgent['version'];
+            if ($baseUserAgent instanceof \donatj\UserAgent\UserAgent) {
+                $userAgent->platform = (string)$baseUserAgent->platform();
+                $userAgent->browser  = (string)$baseUserAgent->browser();
+                $userAgent->version  = (string)$baseUserAgent->browserVersion();
 
                 if (!empty($userAgent->platform) || !empty($userAgent->browser) || !empty($userAgent->version)) {
                     $userAgent->successfullyParsed = true;

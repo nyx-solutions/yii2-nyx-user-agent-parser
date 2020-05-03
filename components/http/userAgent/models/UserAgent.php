@@ -14,25 +14,25 @@
         /**
          * @var string
          */
-        public $ua;
+        public string $ua;
 
         /**
          * @var bool
          */
-        public $successfullyParsed = false;
+        public bool $successfullyParsed = false;
 
         /**
          * @var string
          */
-        public $platform;
+        public string $platform;
 
         /**
          * @var string
          */
-        public $browser;
+        public string $browser;
 
         /**
          * @var string
          */
-        public $version;
+        public string $version;
     }
