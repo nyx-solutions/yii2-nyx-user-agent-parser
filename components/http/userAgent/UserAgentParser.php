@@ -1,16 +1,16 @@
 <?php
 
-    namespace nox\components\http\userAgent;
+    namespace nyx\components\http\userAgent;
 
     use donatj\UserAgent\UserAgentParser as BaseUserAgentParser;
-    use nox\components\http\userAgent\models\UserAgent;
+    use nyx\components\http\userAgent\models\UserAgent;
     use Yii;
     use yii\base\Component;
 
     /**
      * Class UserAgentParser
      *
-     * @package nox\components\http
+     * @package nyx\components\http
      */
     class UserAgentParser extends Component
     {

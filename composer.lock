@@ -256,16 +256,16 @@
             "time": "2020-06-29T00:56:53+00:00"
         },
         {
-            "name": "nox-it/yii2-nox",
+            "name": "nyx-solutions/yii2-nyx",
             "version": "2.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/nox-it/yii2-nox.git",
+                "url": "https://github.com/nyx-solutions/yii2-nyx.git",
                 "reference": "152898b41017ab62574254a35f928e696a2e57d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nox-it/yii2-nox/zipball/152898b41017ab62574254a35f928e696a2e57d7",
+                "url": "https://api.github.com/repos/nyx-solutions/yii2-nyx/zipball/152898b41017ab62574254a35f928e696a2e57d7",
                 "reference": "152898b41017ab62574254a35f928e696a2e57d7",
                 "shasum": ""
             },
@@ -276,7 +276,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "nox\\": "base"
+                    "nyx\\": "base"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -299,27 +299,27 @@
             "time": "2020-05-02T00:18:41+00:00"
         },
         {
-            "name": "nox-it/yii2-nox-mvc",
+            "name": "nyx-solutions/yii2-nyx-mvc",
             "version": "2.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/nox-it/yii2-nox-mvc.git",
+                "url": "https://github.com/nyx-solutions/yii2-nyx-mvc.git",
                 "reference": "696f36152103d321fe3c12808d2d5eb2ae40203e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nox-it/yii2-nox-mvc/zipball/696f36152103d321fe3c12808d2d5eb2ae40203e",
+                "url": "https://api.github.com/repos/nyx-solutions/yii2-nyx-mvc/zipball/696f36152103d321fe3c12808d2d5eb2ae40203e",
                 "reference": "696f36152103d321fe3c12808d2d5eb2ae40203e",
                 "shasum": ""
             },
             "require": {
-                "nox-it/yii2-nox": "~2.0.0",
+                "nyx-solutions/yii2-nyx": "~2.0.0",
                 "php": ">=7.4.0"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "nox\\mvc\\": "mvc/"
+                    "nyx\\mvc\\": "mvc/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",

@@ -1,13 +1,13 @@
 <?php
 
-    namespace nox\components\http\userAgent\models;
+    namespace nyx\components\http\userAgent\models;
 
-    use nox\mvc\base\Model;
+    use nyx\mvc\base\Model;
 
     /**
      * Class UserAgent
      *
-     * @package nox\components\http\userAgent\models
+     * @package nyx\components\http\userAgent\models
      */
     class UserAgent extends Model
     {
