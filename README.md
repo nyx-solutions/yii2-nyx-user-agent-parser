@@ -1,4 +1,4 @@
-Yii PHP Framework Version 2 / NOX UserAgent Parser
+Yii PHP Framework Version 2 / NYX UserAgent Parser
 ==================================================
 
 A simple streamlined PHP user-agent parser for Yii Framework 2.
